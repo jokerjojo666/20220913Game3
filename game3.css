@@ -1,0 +1,42 @@
+:root {
+    --mouse-x: 0;
+    --mouse-y: 0;
+    --radius: 40px;
+    --factor:1;
+    --scale:0;
+}
+
+body {
+    background-color: #000000;
+}
+
+#ball {
+    width: var(--radius);
+    height: var(--radius);
+    border-radius: 50%;
+    background-color: #FBD771;
+    position: absolute;
+    transform: translate(
+        calc(var(--mouse-x) * 1px - var(--radius)/2),
+        calc(var(--mouse-y) * 1px - var(--radius)/2));
+}
+
+.halo{
+    width: var(--radius);
+    height: var(--radius);
+    border-radius: 50%;
+    background-color: #FBD771;
+    position: absolute;
+    opacity: 0.15;
+    transform:scale(calc(var(--factor)* var(--scale)));
+}
+
+.halo:nth-of-type(1){
+    --factor:0.3;
+}
+.halo:nth-of-type(2){
+    --factor:0.5;
+}
+.halo:nth-of-type(3){
+    --factor:0.9;
+}
